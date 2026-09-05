@@ -1,90 +1,227 @@
 <!DOCTYPE html>
 <html lang="hi">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
 <title>राधा नाम जाप</title>
 
+
 <style>
 
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap');
+
+
+/* =========================
+   BASIC
+========================= */
+
 *{
+    margin:0;
+    padding:0;
     box-sizing:border-box;
 }
 
+
 body{
-    margin:0;
+
+    min-height:100vh;
+
+    font-family:
+        "Noto Sans Devanagari",
+        "Mangal",
+        sans-serif;
+
+    color:#fff7e8;
+
+    background:
+        radial-gradient(
+            circle at 50% 18%,
+            #641b3b 0%,
+            #2b0b1c 45%,
+            #0e0409 100%
+        );
+
+    overflow:hidden;
+}
+
+
+/* =========================
+   BACKGROUND GLOW
+========================= */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    width:500px;
+    height:500px;
+
+    border-radius:50%;
+
+    background:#d9a441;
+
+    filter:blur(180px);
+
+    opacity:.12;
+
+    top:-180px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    pointer-events:none;
+}
+
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.container{
+
     min-height:100vh;
 
     display:flex;
-    justify-content:center;
+
+    flex-direction:column;
+
     align-items:center;
 
-    font-family:"Noto Sans Devanagari","Mangal",sans-serif;
+    justify-content:center;
+
+    padding:25px 20px;
+
+    position:relative;
 
     text-align:center;
-
-    background:
-    radial-gradient(
-        circle,
-        #fff5f8,
-        #ffe0ea,
-        #f5b9cc
-    );
-
-    color:#6d2441;
 }
 
-.container{
-    padding:30px 20px;
-}
 
-.flower{
-    font-size:36px;
+/* =========================
+   OM
+========================= */
+
+.om{
+
+    font-size:30px;
+
+    color:#e5b75b;
+
     margin-bottom:8px;
+
+    text-shadow:
+        0 0 15px rgba(229,183,91,.3);
 }
+
+
+/* =========================
+   TITLE
+========================= */
 
 h1{
-    font-size:32px;
-    margin:0 0 8px;
+
+    font-size:34px;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
 }
+
 
 .subtitle{
-    opacity:.75;
-    margin-bottom:25px;
+
+    margin-top:5px;
+
+    font-size:14px;
+
+    color:#d9c5a8;
+
 }
 
-.counter{
-    font-size:22px;
-    font-weight:bold;
-    margin-bottom:25px;
+
+/* =========================
+   COUNTER
+========================= */
+
+.counter-box{
+
+    margin-top:25px;
+
+    padding:12px 32px;
+
+    border:
+
+        1px solid
+        rgba(229,183,91,.25);
+
+    border-radius:50px;
+
+    background:
+        rgba(255,255,255,.05);
+
+    backdrop-filter:blur(12px);
+
+    box-shadow:
+        0 8px 30px rgba(0,0,0,.25);
 }
 
-.circle{
 
-    width:270px;
-    height:270px;
+.counter-label{
+
+    font-size:13px;
+
+    color:#cdb99d;
+
+}
+
+
+#count{
+
+    display:block;
+
+    margin-top:2px;
+
+    font-size:32px;
+
+    font-weight:700;
+
+    color:#f1c96d;
+
+    min-width:40px;
+
+}
+
+
+/* =========================
+   MAIN RADHA CIRCLE
+========================= */
+
+.jap-button{
+
+    width:280px;
+
+    height:280px;
+
+    margin-top:30px;
 
     border-radius:50%;
 
     display:flex;
+
     align-items:center;
+
     justify-content:center;
 
-    margin:auto;
-
-    background:
-    linear-gradient(
-        145deg,
-        #e85d8b,
-        #b92f62
-    );
-
-    border:8px solid white;
-
-    box-shadow:
-    0 18px 45px rgba(138,35,75,.35),
-    inset 0 0 30px rgba(255,255,255,.2);
+    position:relative;
 
     cursor:pointer;
 
@@ -92,143 +229,447 @@ h1{
 
     -webkit-tap-highlight-color:transparent;
 
-    transition:0.12s;
+
+    background:
+
+        radial-gradient(
+            circle at 35% 30%,
+            #96365c,
+            #5b1735 58%,
+            #350c1f 100%
+        );
+
+
+    border:
+
+        2px solid
+        rgba(239,199,111,.75);
+
+
+    box-shadow:
+
+        0 0 0 8px
+        rgba(229,183,91,.07),
+
+        0 0 45px
+        rgba(220,165,70,.18),
+
+        inset 0 0 40px
+        rgba(0,0,0,.35);
+
+
+    transition:
+
+        transform .12s ease,
+
+        box-shadow .12s ease;
 }
 
-.circle:active{
-    transform:scale(.94);
+
+/* INNER BORDER */
+
+.jap-button::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:12px;
+
+    border-radius:50%;
+
+    border:
+
+        1px solid
+        rgba(255,220,145,.28);
 }
+
+
+.jap-button::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:22px;
+
+    border-radius:50%;
+
+    border:
+
+        1px solid
+        rgba(255,255,255,.08);
+}
+
+
+/* =========================
+   CLICK EFFECT
+========================= */
+
+.jap-button:active{
+
+    transform:scale(.94);
+
+    box-shadow:
+
+        0 0 0 8px
+        rgba(229,183,91,.1),
+
+        0 0 65px
+        rgba(220,165,70,.35),
+
+        inset 0 0 45px
+        rgba(0,0,0,.4);
+}
+
+
+/* =========================
+   RADHA TEXT
+========================= */
 
 .radha{
 
-    color:white;
+    position:relative;
 
-    font-size:62px;
+    z-index:2;
 
-    font-weight:bold;
+    font-size:68px;
+
+    font-weight:800;
+
+    color:#ffe7a5;
 
     text-shadow:
-    0 4px 12px rgba(80,0,30,.3);
+
+        0 0 12px
+        rgba(255,209,104,.3),
+
+        0 4px 12px
+        rgba(0,0,0,.35);
 }
+
+
+/* =========================
+   HINT
+========================= */
 
 .hint{
 
-    margin-top:27px;
+    margin-top:24px;
 
-    opacity:.7;
+    color:#bca991;
+
+    font-size:14px;
 }
+
+
+/* =========================
+   RESET BUTTON
+========================= */
 
 .reset{
 
     margin-top:18px;
 
-    border:none;
+    padding:10px 22px;
 
     border-radius:30px;
 
-    padding:10px 20px;
+    border:
 
-    background:rgba(255,255,255,.7);
+        1px solid
+        rgba(229,183,91,.25);
 
-    color:#7c2949;
+    background:
+        rgba(255,255,255,.05);
+
+    color:#cdb99d;
+
+    font-family:inherit;
+
+    font-size:13px;
 
     cursor:pointer;
+
+    transition:.2s;
 }
+
+
+.reset:hover{
+
+    background:
+        rgba(229,183,91,.1);
+
+    color:#f1c96d;
+}
+
 
 .reset:active{
-    transform:scale(.96);
+
+    transform:scale(.95);
 }
 
-.plus{
+
+/* =========================
+   RADHA POPUP
+========================= */
+
+.jap-name{
 
     position:fixed;
 
     pointer-events:none;
 
-    color:#b92f62;
+    z-index:9999;
 
-    font-size:26px;
+    color:#f1c96d;
 
-    font-weight:bold;
+    font-size:32px;
 
-    animation:rise .7s forwards;
+    font-weight:800;
+
+    white-space:nowrap;
+
+    text-shadow:
+
+        0 0 15px
+        rgba(241,201,109,.7),
+
+        0 3px 10px
+        rgba(0,0,0,.5);
+
+
+    animation:
+
+        radhaPop
+        1s
+        ease-out
+        forwards;
 }
 
-@keyframes rise{
 
-    from{
-        opacity:1;
-        transform:translateY(0) scale(1);
+/* =========================
+   POPUP ANIMATION
+========================= */
+
+@keyframes radhaPop{
+
+    0%{
+
+        opacity:0;
+
+        transform:
+            translate(-50%,0)
+            scale(.5);
     }
 
-    to{
+
+    15%{
+
+        opacity:1;
+
+        transform:
+            translate(-50%,-15px)
+            scale(1);
+    }
+
+
+    70%{
+
+        opacity:1;
+
+        transform:
+            translate(-50%,-100px)
+            scale(1.05);
+    }
+
+
+    100%{
+
         opacity:0;
-        transform:translateY(-80px) scale(1.3);
+
+        transform:
+            translate(-50%,-150px)
+            scale(1.15);
+    }
+
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+
+    position:absolute;
+
+    bottom:18px;
+
+    font-size:11px;
+
+    color:#806d5c;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:600px){
+
+    h1{
+
+        font-size:29px;
+
+    }
+
+
+    .subtitle{
+
+        font-size:13px;
+
+    }
+
+
+    .jap-button{
+
+        width:250px;
+
+        height:250px;
+
+    }
+
+
+    .radha{
+
+        font-size:60px;
+
+    }
+
+
+    .counter-box{
+
+        margin-top:22px;
+
     }
 
 }
 
 </style>
+
 </head>
+
 
 
 <body>
 
+
 <div class="container">
 
-<div class="flower">
-🪷
-</div>
+
+    <!-- OM -->
+
+    <div class="om">
+
+        ॐ
+
+    </div>
 
 
-<h1>
-राधा नाम जाप
-</h1>
+    <!-- TITLE -->
+
+    <h1>
+
+        राधा नाम जाप
+
+    </h1>
 
 
-<div class="subtitle">
-प्रेम से राधा नाम का जाप करें
-</div>
+    <div class="subtitle">
+
+        प्रेम और श्रद्धा से राधा नाम का जाप करें
+
+    </div>
 
 
-<div class="counter">
 
-जाप:
+    <!-- COUNTER -->
 
-<span id="count">
-0
-</span>
+    <div class="counter-box">
 
-</div>
+        <div class="counter-label">
 
+            कुल जाप
 
-<div
-class="circle"
-id="japButton"
->
-
-<div class="radha">
-राधा
-</div>
-
-</div>
+        </div>
 
 
-<div class="hint">
+        <span id="count">
 
-राधा नाम जपने के लिए ऊपर टैप करें
+            0
 
-</div>
+        </span>
+
+    </div>
 
 
-<button
-class="reset"
-id="resetButton"
->
 
-काउंटर रीसेट करें
+    <!-- MAIN CIRCLE -->
 
-</button>
+    <div
+
+        class="jap-button"
+
+        id="japButton"
+
+        aria-label="राधा नाम जाप करें"
+
+    >
+
+        <div class="radha">
+
+            राधा
+
+        </div>
+
+    </div>
+
+
+
+    <!-- HINT -->
+
+    <div class="hint">
+
+        राधा नाम जपने के लिए स्पर्श करें
+
+    </div>
+
+
+
+    <!-- RESET -->
+
+    <button
+
+        class="reset"
+
+        id="resetButton"
+
+    >
+
+        काउंटर रीसेट करें
+
+    </button>
+
+
+
+    <!-- FOOTER -->
+
+    <div class="footer">
+
+        राधे राधे 🪷
+
+    </div>
 
 
 </div>
@@ -237,489 +678,183 @@ id="resetButton"
 
 <script>
 
+
+/* =========================
+   ELEMENTS
+========================= */
+
 const button =
-document.getElementById("japButton");
+    document.getElementById("japButton");
 
 const countText =
-document.getElementById("count");
+    document.getElementById("count");
 
 const resetButton =
-document.getElementById("resetButton");
+    document.getElementById("resetButton");
 
+
+
+/* =========================
+   LOAD SAVED COUNT
+========================= */
 
 let count =
-Number(
-localStorage.getItem(
-"radhaJapCount"
-)
-) || 0;
+    Number(
+        localStorage.getItem(
+            "radhaJapCount"
+        )
+    ) || 0;
 
 
-function showCount(){
 
-countText.textContent =
-count.toLocaleString("en-IN");
+/* =========================
+   UPDATE COUNTER
+========================= */
+
+function updateCount(){
+
+    countText.textContent =
+        count.toLocaleString("en-IN");
 
 }
 
 
-showCount();
+updateCount();
 
 
+
+/* =========================
+   RADHA BUTTON
+========================= */
 
 button.addEventListener(
-"click",
-function(event){
+    "click",
+    function(){
 
-count++;
+        /* Increase counter */
 
-localStorage.setItem(
-"radhaJapCount",
-count
+        count++;
+
+
+        /* Save counter */
+
+        localStorage.setItem(
+            "radhaJapCount",
+            count
+        );
+
+
+        /* Update number */
+
+        updateCount();
+
+
+
+        /* =====================
+           CREATE RADHA POPUP
+        ===================== */
+
+        const name =
+            document.createElement("div");
+
+
+        name.className =
+            "jap-name";
+
+
+        name.textContent =
+            "राधा";
+
+
+
+        /* Get circle position */
+
+        const rect =
+            button.getBoundingClientRect();
+
+
+        const x =
+            rect.left +
+            rect.width / 2;
+
+
+        const y =
+            rect.top +
+            rect.height / 2;
+
+
+
+        /* Position popup */
+
+        name.style.left =
+            x + "px";
+
+
+        name.style.top =
+            y + "px";
+
+
+
+        /* Add popup */
+
+        document.body.appendChild(
+            name
+        );
+
+
+
+        /* Remove after animation */
+
+        setTimeout(
+            function(){
+
+                name.remove();
+
+            },
+            1000
+        );
+
+    }
 );
 
-showCount();
 
 
-
-const plus =
-document.createElement("div");
-
-plus.className =
-"plus";
-
-plus.textContent =
-"+1";
-
-
-
-let x =
-event.clientX ||
-window.innerWidth / 2;
-
-let y =
-event.clientY ||
-window.innerHeight / 2;
-
-
-
-plus.style.left =
-x + "px";
-
-plus.style.top =
-y + "px";
-
-
-
-document.body.appendChild(
-plus
-);
-
-
-
-setTimeout(
-function(){
-
-plus.remove();
-
-},
-700
-);
-
-}
-);
-
-
+/* =========================
+   RESET COUNTER
+========================= */
 
 resetButton.addEventListener(
-"click",
-function(){
+    "click",
+    function(event){
 
-const confirmReset =
-confirm(
-"क्या आप काउंटर को 0 पर रीसेट करना चाहते हैं?"
-);
+        /* Prevent circle click */
 
-if(confirmReset){
+        event.stopPropagation();
 
-count = 0;
 
-localStorage.setItem(
-"radhaJapCount",
-count
-);
+        /* Reset */
 
-showCount();
+        count = 0;
 
-}
 
-}
+        /* Save */
+
+        localStorage.setItem(
+            "radhaJapCount",
+            "0"
+        );
+
+
+        /* Update */
+
+        updateCount();
+
+    }
 );
 
 </script>
 
 
 </body>
-</html><!DOCTYPE html>
-<html lang="hi">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>राधा नाम जाप</title>
-
-<style>
-
-*{
-    box-sizing:border-box;
-}
-
-body{
-    margin:0;
-    min-height:100vh;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    font-family:"Noto Sans Devanagari","Mangal",sans-serif;
-
-    text-align:center;
-
-    background:
-    radial-gradient(
-        circle,
-        #fff5f8,
-        #ffe0ea,
-        #f5b9cc
-    );
-
-    color:#6d2441;
-}
-
-.container{
-    padding:30px 20px;
-}
-
-.flower{
-    font-size:36px;
-    margin-bottom:8px;
-}
-
-h1{
-    font-size:32px;
-    margin:0 0 8px;
-}
-
-.subtitle{
-    opacity:.75;
-    margin-bottom:25px;
-}
-
-.counter{
-    font-size:22px;
-    font-weight:bold;
-    margin-bottom:25px;
-}
-
-.circle{
-
-    width:270px;
-    height:270px;
-
-    border-radius:50%;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    margin:auto;
-
-    background:
-    linear-gradient(
-        145deg,
-        #e85d8b,
-        #b92f62
-    );
-
-    border:8px solid white;
-
-    box-shadow:
-    0 18px 45px rgba(138,35,75,.35),
-    inset 0 0 30px rgba(255,255,255,.2);
-
-    cursor:pointer;
-
-    user-select:none;
-
-    -webkit-tap-highlight-color:transparent;
-
-    transition:0.12s;
-}
-
-.circle:active{
-    transform:scale(.94);
-}
-
-.radha{
-
-    color:white;
-
-    font-size:62px;
-
-    font-weight:bold;
-
-    text-shadow:
-    0 4px 12px rgba(80,0,30,.3);
-}
-
-.hint{
-
-    margin-top:27px;
-
-    opacity:.7;
-}
-
-.reset{
-
-    margin-top:18px;
-
-    border:none;
-
-    border-radius:30px;
-
-    padding:10px 20px;
-
-    background:rgba(255,255,255,.7);
-
-    color:#7c2949;
-
-    cursor:pointer;
-}
-
-.reset:active{
-    transform:scale(.96);
-}
-
-.plus{
-
-    position:fixed;
-
-    pointer-events:none;
-
-    color:#b92f62;
-
-    font-size:26px;
-
-    font-weight:bold;
-
-    animation:rise .7s forwards;
-}
-
-@keyframes rise{
-
-    from{
-        opacity:1;
-        transform:translateY(0) scale(1);
-    }
-
-    to{
-        opacity:0;
-        transform:translateY(-80px) scale(1.3);
-    }
-
-}
-
-</style>
-</head>
-
-
-<body>
-
-<div class="container">
-
-<div class="flower">
-🪷
-</div>
-
-
-<h1>
-राधा नाम जाप
-</h1>
-
-
-<div class="subtitle">
-प्रेम से राधा नाम का जाप करें
-</div>
-
-
-<div class="counter">
-
-जाप:
-
-<span id="count">
-0
-</span>
-
-</div>
-
-
-<div
-class="circle"
-id="japButton"
->
-
-<div class="radha">
-राधा
-</div>
-
-</div>
-
-
-<div class="hint">
-
-राधा नाम जपने के लिए ऊपर टैप करें
-
-</div>
-
-
-<button
-class="reset"
-id="resetButton"
->
-
-काउंटर रीसेट करें
-
-</button>
-
-
-</div>
-
-
-
-<script>
-
-const button =
-document.getElementById("japButton");
-
-const countText =
-document.getElementById("count");
-
-const resetButton =
-document.getElementById("resetButton");
-
-
-let count =
-Number(
-localStorage.getItem(
-"radhaJapCount"
-)
-) || 0;
-
-
-function showCount(){
-
-countText.textContent =
-count.toLocaleString("en-IN");
-
-}
-
-
-showCount();
-
-
-
-button.addEventListener(
-"click",
-function(event){
-
-count++;
-
-localStorage.setItem(
-"radhaJapCount",
-count
-);
-
-showCount();
-
-
-
-const plus =
-document.createElement("div");
-
-plus.className =
-"plus";
-
-plus.textContent =
-"+1";
-
-
-
-let x =
-event.clientX ||
-window.innerWidth / 2;
-
-let y =
-event.clientY ||
-window.innerHeight / 2;
-
-
-
-plus.style.left =
-x + "px";
-
-plus.style.top =
-y + "px";
-
-
-
-document.body.appendChild(
-plus
-);
-
-
-
-setTimeout(
-function(){
-
-plus.remove();
-
-},
-700
-);
-
-}
-);
-
-
-
-resetButton.addEventListener(
-"click",
-function(){
-
-const confirmReset =
-confirm(
-"क्या आप काउंटर को 0 पर रीसेट करना चाहते हैं?"
-);
-
-if(confirmReset){
-
-count = 0;
-
-localStorage.setItem(
-"radhaJapCount",
-count
-);
-
-showCount();
-
-}
-
-}
-);
-
-</script>
-
-
-</body>
 </html>
