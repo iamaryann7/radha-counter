@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>राधा नाम जाप</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-family:"Noto Sans Devanagari","Mangal",sans-serif;
+
+    text-align:center;
+
+    background:
+    radial-gradient(
+        circle,
+        #fff5f8,
+        #ffe0ea,
+        #f5b9cc
+    );
+
+    color:#6d2441;
+}
+
+.container{
+    padding:30px 20px;
+}
+
+.flower{
+    font-size:36px;
+    margin-bottom:8px;
+}
+
+h1{
+    font-size:32px;
+    margin:0 0 8px;
+}
+
+.subtitle{
+    opacity:.75;
+    margin-bottom:25px;
+}
+
+.counter{
+    font-size:22px;
+    font-weight:bold;
+    margin-bottom:25px;
+}
+
+.circle{
+
+    width:270px;
+    height:270px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    margin:auto;
+
+    background:
+    linear-gradient(
+        145deg,
+        #e85d8b,
+        #b92f62
+    );
+
+    border:8px solid white;
+
+    box-shadow:
+    0 18px 45px rgba(138,35,75,.35),
+    inset 0 0 30px rgba(255,255,255,.2);
+
+    cursor:pointer;
+
+    user-select:none;
+
+    -webkit-tap-highlight-color:transparent;
+
+    transition:0.12s;
+}
+
+.circle:active{
+    transform:scale(.94);
+}
+
+.radha{
+
+    color:white;
+
+    font-size:62px;
+
+    font-weight:bold;
+
+    text-shadow:
+    0 4px 12px rgba(80,0,30,.3);
+}
+
+.hint{
+
+    margin-top:27px;
+
+    opacity:.7;
+}
+
+.reset{
+
+    margin-top:18px;
+
+    border:none;
+
+    border-radius:30px;
+
+    padding:10px 20px;
+
+    background:rgba(255,255,255,.7);
+
+    color:#7c2949;
+
+    cursor:pointer;
+}
+
+.reset:active{
+    transform:scale(.96);
+}
+
+.plus{
+
+    position:fixed;
+
+    pointer-events:none;
+
+    color:#b92f62;
+
+    font-size:26px;
+
+    font-weight:bold;
+
+    animation:rise .7s forwards;
+}
+
+@keyframes rise{
+
+    from{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+
+    to{
+        opacity:0;
+        transform:translateY(-80px) scale(1.3);
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="container">
+
+<div class="flower">
+🪷
+</div>
+
+
+<h1>
+राधा नाम जाप
+</h1>
+
+
+<div class="subtitle">
+प्रेम से राधा नाम का जाप करें
+</div>
+
+
+<div class="counter">
+
+जाप:
+
+<span id="count">
+0
+</span>
+
+</div>
+
+
+<div
+class="circle"
+id="japButton"
+>
+
+<div class="radha">
+राधा
+</div>
+
+</div>
+
+
+<div class="hint">
+
+राधा नाम जपने के लिए ऊपर टैप करें
+
+</div>
+
+
+<button
+class="reset"
+id="resetButton"
+>
+
+काउंटर रीसेट करें
+
+</button>
+
+
+</div>
+
+
+
+<script>
+
+const button =
+document.getElementById("japButton");
+
+const countText =
+document.getElementById("count");
+
+const resetButton =
+document.getElementById("resetButton");
+
+
+let count =
+Number(
+localStorage.getItem(
+"radhaJapCount"
+)
+) || 0;
+
+
+function showCount(){
+
+countText.textContent =
+count.toLocaleString("en-IN");
+
+}
+
+
+showCount();
+
+
+
+button.addEventListener(
+"click",
+function(event){
+
+count++;
+
+localStorage.setItem(
+"radhaJapCount",
+count
+);
+
+showCount();
+
+
+
+const plus =
+document.createElement("div");
+
+plus.className =
+"plus";
+
+plus.textContent =
+"+1";
+
+
+
+let x =
+event.clientX ||
+window.innerWidth / 2;
+
+let y =
+event.clientY ||
+window.innerHeight / 2;
+
+
+
+plus.style.left =
+x + "px";
+
+plus.style.top =
+y + "px";
+
+
+
+document.body.appendChild(
+plus
+);
+
+
+
+setTimeout(
+function(){
+
+plus.remove();
+
+},
+700
+);
+
+}
+);
+
+
+
+resetButton.addEventListener(
+"click",
+function(){
+
+const confirmReset =
+confirm(
+"क्या आप काउंटर को 0 पर रीसेट करना चाहते हैं?"
+);
+
+if(confirmReset){
+
+count = 0;
+
+localStorage.setItem(
+"radhaJapCount",
+count
+);
+
+showCount();
+
+}
+
+}
+);
+
+</script>
+
+
+</body>
+</html><!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>राधा नाम जाप</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-family:"Noto Sans Devanagari","Mangal",sans-serif;
+
+    text-align:center;
+
+    background:
+    radial-gradient(
+        circle,
+        #fff5f8,
+        #ffe0ea,
+        #f5b9cc
+    );
+
+    color:#6d2441;
+}
+
+.container{
+    padding:30px 20px;
+}
+
+.flower{
+    font-size:36px;
+    margin-bottom:8px;
+}
+
+h1{
+    font-size:32px;
+    margin:0 0 8px;
+}
+
+.subtitle{
+    opacity:.75;
+    margin-bottom:25px;
+}
+
+.counter{
+    font-size:22px;
+    font-weight:bold;
+    margin-bottom:25px;
+}
+
+.circle{
+
+    width:270px;
+    height:270px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    margin:auto;
+
+    background:
+    linear-gradient(
+        145deg,
+        #e85d8b,
+        #b92f62
+    );
+
+    border:8px solid white;
+
+    box-shadow:
+    0 18px 45px rgba(138,35,75,.35),
+    inset 0 0 30px rgba(255,255,255,.2);
+
+    cursor:pointer;
+
+    user-select:none;
+
+    -webkit-tap-highlight-color:transparent;
+
+    transition:0.12s;
+}
+
+.circle:active{
+    transform:scale(.94);
+}
+
+.radha{
+
+    color:white;
+
+    font-size:62px;
+
+    font-weight:bold;
+
+    text-shadow:
+    0 4px 12px rgba(80,0,30,.3);
+}
+
+.hint{
+
+    margin-top:27px;
+
+    opacity:.7;
+}
+
+.reset{
+
+    margin-top:18px;
+
+    border:none;
+
+    border-radius:30px;
+
+    padding:10px 20px;
+
+    background:rgba(255,255,255,.7);
+
+    color:#7c2949;
+
+    cursor:pointer;
+}
+
+.reset:active{
+    transform:scale(.96);
+}
+
+.plus{
+
+    position:fixed;
+
+    pointer-events:none;
+
+    color:#b92f62;
+
+    font-size:26px;
+
+    font-weight:bold;
+
+    animation:rise .7s forwards;
+}
+
+@keyframes rise{
+
+    from{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+
+    to{
+        opacity:0;
+        transform:translateY(-80px) scale(1.3);
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="container">
+
+<div class="flower">
+🪷
+</div>
+
+
+<h1>
+राधा नाम जाप
+</h1>
+
+
+<div class="subtitle">
+प्रेम से राधा नाम का जाप करें
+</div>
+
+
+<div class="counter">
+
+जाप:
+
+<span id="count">
+0
+</span>
+
+</div>
+
+
+<div
+class="circle"
+id="japButton"
+>
+
+<div class="radha">
+राधा
+</div>
+
+</div>
+
+
+<div class="hint">
+
+राधा नाम जपने के लिए ऊपर टैप करें
+
+</div>
+
+
+<button
+class="reset"
+id="resetButton"
+>
+
+काउंटर रीसेट करें
+
+</button>
+
+
+</div>
+
+
+
+<script>
+
+const button =
+document.getElementById("japButton");
+
+const countText =
+document.getElementById("count");
+
+const resetButton =
+document.getElementById("resetButton");
+
+
+let count =
+Number(
+localStorage.getItem(
+"radhaJapCount"
+)
+) || 0;
+
+
+function showCount(){
+
+countText.textContent =
+count.toLocaleString("en-IN");
+
+}
+
+
+showCount();
+
+
+
+button.addEventListener(
+"click",
+function(event){
+
+count++;
+
+localStorage.setItem(
+"radhaJapCount",
+count
+);
+
+showCount();
+
+
+
+const plus =
+document.createElement("div");
+
+plus.className =
+"plus";
+
+plus.textContent =
+"+1";
+
+
+
+let x =
+event.clientX ||
+window.innerWidth / 2;
+
+let y =
+event.clientY ||
+window.innerHeight / 2;
+
+
+
+plus.style.left =
+x + "px";
+
+plus.style.top =
+y + "px";
+
+
+
+document.body.appendChild(
+plus
+);
+
+
+
+setTimeout(
+function(){
+
+plus.remove();
+
+},
+700
+);
+
+}
+);
+
+
+
+resetButton.addEventListener(
+"click",
+function(){
+
+const confirmReset =
+confirm(
+"क्या आप काउंटर को 0 पर रीसेट करना चाहते हैं?"
+);
+
+if(confirmReset){
+
+count = 0;
+
+localStorage.setItem(
+"radhaJapCount",
+count
+);
+
+showCount();
+
+}
+
+}
+);
+
+</script>
+
+
+</body>
+</html>
