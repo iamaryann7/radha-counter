@@ -16,10 +16,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap');
 
 
-/* =========================
-   BASIC
-========================= */
-
 *{
     margin:0;
     padding:0;
@@ -50,9 +46,7 @@ body{
 }
 
 
-/* =========================
-   BACKGROUND GLOW
-========================= */
+/* Background glow */
 
 body::before{
 
@@ -81,9 +75,7 @@ body::before{
 }
 
 
-/* =========================
-   MAIN CONTAINER
-========================= */
+/* Main container */
 
 .container{
 
@@ -105,9 +97,7 @@ body::before{
 }
 
 
-/* =========================
-   OM
-========================= */
+/* Om */
 
 .om{
 
@@ -122,9 +112,7 @@ body::before{
 }
 
 
-/* =========================
-   TITLE
-========================= */
+/* Heading */
 
 h1{
 
@@ -133,7 +121,6 @@ h1{
     font-weight:700;
 
     letter-spacing:1px;
-
 }
 
 
@@ -144,13 +131,10 @@ h1{
     font-size:14px;
 
     color:#d9c5a8;
-
 }
 
 
-/* =========================
-   COUNTER
-========================= */
+/* Counter */
 
 .counter-box{
 
@@ -159,7 +143,6 @@ h1{
     padding:12px 32px;
 
     border:
-
         1px solid
         rgba(229,183,91,.25);
 
@@ -180,7 +163,6 @@ h1{
     font-size:13px;
 
     color:#cdb99d;
-
 }
 
 
@@ -197,13 +179,10 @@ h1{
     color:#f1c96d;
 
     min-width:40px;
-
 }
 
 
-/* =========================
-   MAIN RADHA CIRCLE
-========================= */
+/* Main circle */
 
 .jap-button{
 
@@ -231,7 +210,6 @@ h1{
 
 
     background:
-
         radial-gradient(
             circle at 35% 30%,
             #96365c,
@@ -241,7 +219,6 @@ h1{
 
 
     border:
-
         2px solid
         rgba(239,199,111,.75);
 
@@ -259,14 +236,12 @@ h1{
 
 
     transition:
-
         transform .12s ease,
-
         box-shadow .12s ease;
 }
 
 
-/* INNER BORDER */
+/* Inner circle */
 
 .jap-button::before{
 
@@ -279,7 +254,6 @@ h1{
     border-radius:50%;
 
     border:
-
         1px solid
         rgba(255,220,145,.28);
 }
@@ -296,15 +270,12 @@ h1{
     border-radius:50%;
 
     border:
-
         1px solid
         rgba(255,255,255,.08);
 }
 
 
-/* =========================
-   CLICK EFFECT
-========================= */
+/* Click effect */
 
 .jap-button:active{
 
@@ -323,9 +294,7 @@ h1{
 }
 
 
-/* =========================
-   RADHA TEXT
-========================= */
+/* Radha */
 
 .radha{
 
@@ -349,9 +318,7 @@ h1{
 }
 
 
-/* =========================
-   HINT
-========================= */
+/* Hint */
 
 .hint{
 
@@ -363,9 +330,7 @@ h1{
 }
 
 
-/* =========================
-   RESET BUTTON
-========================= */
+/* Reset */
 
 .reset{
 
@@ -376,7 +341,6 @@ h1{
     border-radius:30px;
 
     border:
-
         1px solid
         rgba(229,183,91,.25);
 
@@ -438,9 +402,7 @@ h1{
         0 3px 10px
         rgba(0,0,0,.5);
 
-
     animation:
-
         radhaPop
         1s
         ease-out
@@ -448,9 +410,7 @@ h1{
 }
 
 
-/* =========================
-   POPUP ANIMATION
-========================= */
+/* Popup animation */
 
 @keyframes radhaPop{
 
@@ -496,9 +456,7 @@ h1{
 }
 
 
-/* =========================
-   FOOTER
-========================= */
+/* Footer */
 
 .footer{
 
@@ -512,23 +470,19 @@ h1{
 }
 
 
-/* =========================
-   MOBILE
-========================= */
+/* Mobile */
 
 @media(max-width:600px){
 
     h1{
 
         font-size:29px;
-
     }
 
 
     .subtitle{
 
         font-size:13px;
-
     }
 
 
@@ -537,21 +491,18 @@ h1{
         width:250px;
 
         height:250px;
-
     }
 
 
     .radha{
 
         font-size:60px;
-
     }
 
 
     .counter-box{
 
         margin-top:22px;
-
     }
 
 }
@@ -563,6 +514,18 @@ h1{
 
 
 <body>
+
+
+<!-- =========================
+     RADHA AUDIO
+========================= -->
+
+<audio
+    id="radhaAudio"
+    src="./radha.mp3.m4a"
+    preload="auto">
+</audio>
+
 
 
 <div class="container">
@@ -577,6 +540,7 @@ h1{
     </div>
 
 
+
     <!-- TITLE -->
 
     <h1>
@@ -584,6 +548,7 @@ h1{
         राधा नाम जाप
 
     </h1>
+
 
 
     <div class="subtitle">
@@ -618,13 +583,9 @@ h1{
     <!-- MAIN CIRCLE -->
 
     <div
-
         class="jap-button"
-
         id="japButton"
-
         aria-label="राधा नाम जाप करें"
-
     >
 
         <div class="radha">
@@ -650,11 +611,8 @@ h1{
     <!-- RESET -->
 
     <button
-
         class="reset"
-
         id="resetButton"
-
     >
 
         काउंटर रीसेट करें
@@ -692,6 +650,9 @@ const countText =
 const resetButton =
     document.getElementById("resetButton");
 
+const radhaAudio =
+    document.getElementById("radhaAudio");
+
 
 
 /* =========================
@@ -724,14 +685,14 @@ updateCount();
 
 
 /* =========================
-   RADHA BUTTON
+   CIRCLE CLICK
 ========================= */
 
 button.addEventListener(
     "click",
     function(){
 
-        /* Increase counter */
+        /* Counter +1 */
 
         count++;
 
@@ -744,14 +705,46 @@ button.addEventListener(
         );
 
 
-        /* Update number */
+        /* Update screen */
 
         updateCount();
 
 
 
         /* =====================
-           CREATE RADHA POPUP
+           PLAY RADHA AUDIO
+        ===================== */
+
+        radhaAudio.pause();
+
+        radhaAudio.currentTime = 0;
+
+        radhaAudio.volume = 1;
+
+
+        const playPromise =
+            radhaAudio.play();
+
+
+        if(playPromise !== undefined){
+
+            playPromise.catch(
+                function(error){
+
+                    console.log(
+                        "Audio playback blocked:",
+                        error
+                    );
+
+                }
+            );
+
+        }
+
+
+
+        /* =====================
+           RADHA POPUP
         ===================== */
 
         const name =
@@ -767,7 +760,7 @@ button.addEventListener(
 
 
 
-        /* Get circle position */
+        /* Circle position */
 
         const rect =
             button.getBoundingClientRect();
@@ -783,8 +776,6 @@ button.addEventListener(
             rect.height / 2;
 
 
-
-        /* Position popup */
 
         name.style.left =
             x + "px";
@@ -803,7 +794,7 @@ button.addEventListener(
 
 
 
-        /* Remove after animation */
+        /* Remove popup */
 
         setTimeout(
             function(){
@@ -820,32 +811,24 @@ button.addEventListener(
 
 
 /* =========================
-   RESET COUNTER
+   RESET BUTTON
 ========================= */
 
 resetButton.addEventListener(
     "click",
     function(event){
 
-        /* Prevent circle click */
-
         event.stopPropagation();
 
 
-        /* Reset */
-
         count = 0;
 
-
-        /* Save */
 
         localStorage.setItem(
             "radhaJapCount",
             "0"
         );
 
-
-        /* Update */
 
         updateCount();
 
